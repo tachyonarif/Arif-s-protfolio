@@ -1,0 +1,156 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* Blur-to-Clear Animation */
+@keyframes blurToClear {
+    0% {
+        filter: blur(15px); /* Maximum blur at the start */
+        opacity: 0; /* Start invisible */
+    }
+    50% {
+        opacity: 1; /* Fade in */
+    }
+    100% {
+        filter: blur(0); /* Fully clear at the end */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Text Animation for "Hey!" */
+#hey-text {
+    font-size: 3em;
+    margin: 15px 0;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(50px); /* Start below */
+    animation: moveUp 2s ease-out forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Text Animation for "Welcome" */
+#Welcome-text {
+    font-size: 3em;
+    margin: 15px 0;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(50px); /* Start below */
+    animation: moveUp 2s ease-out forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Text Animation for "provarb" */
+#proverb-text {
+    font-size: 1em;
+    margin: 11px 0;
+    font-weight: normal;
+    opacity: 0;
+    transform: translateY(50px); /* Start below */
+    animation: moveUp 2s ease-out forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#proverb-quote {
+    font-size: 1.5em;
+    color: rgb(173, 216, 230); /* Customize the color if needed */
+    text-align: center;
+    overflow: hidden; /* Ensures no overflow while typing */
+    white-space: nowrap; /* Prevents text wrapping */
+    border-right: 4px solid rgba(92, 50, 50, 0.75); /* Simulates a cursor */
+    width: 0;
+    animation: typing 4s steps(50) 1s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Cursor blink animation */
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Typing Effect */
+#typing-text {
+    font-size: 1.5em;
+    margin: 15px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid #fff; /* Simulates typing cursor */
+    animation: typing 4s steps(20) 2s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+}

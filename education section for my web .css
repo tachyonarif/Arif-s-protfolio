@@ -1,0 +1,158 @@
+/* Education Section */
+#education {
+    background: linear-gradient(135deg, #eef4ff, #ffffff);
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.education-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.education-header h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #0056d2;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.education-header h1::after {
+    content: '';
+    width: 60%;
+    height: 3px;
+    background: #0056d2;
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+}
+
+/* Education Grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Education Card */
+.education-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.education-card h2 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.education-card h3 {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.education-card p {
+    color: #777;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.education-card .edu-year {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    font-size: 0.8em;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/*skill section*/
+
+.skills-section {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #007bff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    animation: fillBar 2s ease forwards;
+    border-radius: 10px;
+}
+
+.percent {
+    font-size: 0.9em;
+    color: #666;
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
