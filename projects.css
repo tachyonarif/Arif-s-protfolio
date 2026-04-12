@@ -1,0 +1,94 @@
+/* ===== PROJECT SECTION (NEW STYLE) ===== */
+
+#projects {
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+/* Title */
+.section-title {
+    font-size: 2.6em;
+     text-align: center;
+    margin-bottom: 50px;
+    color: #0b5ed7;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(56,189,248,0.3);
+}
+
+/* Container */
+.projects-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Card */
+.project-card {
+    background: #111827;
+    padding: 30px 40px;
+    border-radius: 15px;
+
+    border-left: 5px solid #22d3ee; /* 🔥 accent line */
+
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Hover */
+.project-card:hover {
+    transform: translateX(10px);
+    border-left: 5px solid #7c3aed;
+    background: #1f2937;
+}
+
+/* Title */
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Description */
+.project-card p {
+    color: #9ca3af;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* List */
+.project-card ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.project-card ul li {
+    color: #d1d5db;
+    margin-bottom: 6px;
+}
+
+/* Links */
+.project-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #22d3ee;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Underline animation */
+.project-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background: #22d3ee;
+    transition: 0.3s;
+}
+
+.project-links a:hover::after {
+    width: 100%;
+}
