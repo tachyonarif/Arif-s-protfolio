@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arif | Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="nav section for my web .css">
+        <link rel="stylesheet" href="front page.css">
+        <link rel="stylesheet" href="about.css">
+        <link rel="stylesheet" href="random facts.css">
+        <link rel="stylesheet" href="Education.css">
+        <link rel="stylesheet" href="skill.css">
+        <link rel="stylesheet" href="projects.css">
+        <link rel="stylesheet" href="Awards.css">
+        <link rel="stylesheet" href="contact & footer.css">
+        <link rel="stylesheet" href="fun.html">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+            <div class="logo">
+                <img src="signature.png" alt="Signature" style="height: 30px;"> <!-- Your signature -->
+            </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements-section">Achievements</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="fun.html">Bored?</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Hero Section -->
+        <section id="home" class="hero">
+            <img src="Screenshot 2024-06-10 035050.png" alt="Your photo" class="hero-bg" />
+            <div class="hero-content">
+                <h1 id="hey-text">Hi, I'm<b id="Arif"> Arif</b>  👋</h1>
+                <h2 id="Welcome-text">Aspiring Software & Robotics Engineer</h2>
+                <h4 id="proverb-text"> I was reminded recently of the great quote from the American author,<b id="Arnold-name"> Arnold Glasow</b>,
+                    <br>who said: 
+                    <br>
+                    
+                    <p id="proverb-quote">
+                    </p>
+                </h4>  
+            </div>
+        </section>
+        <script>
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+const text = "'Success is simple. Do what's right, the right way, at the right time.'";
+const target = document.getElementById("proverb-quote");
+let i = 0;
+
+function typeEffect() {
+  if (i < text.length) {
+    target.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 40);
+  }
+}
+
+window.addEventListener("load", function () {
+  target.classList.add("typing-active");
+  typeEffect();
+});
+
+</script>
+
+
+<section id="about">
+    <div class="about-header">
+        <h1>About Me</h1>
+    </div>
+
+    <div class="about-content">
+        <div class="about-image">
+            <img src="1000017332.jpg" alt="My Photo">
+        </div>
+
+        <div class="about-text">
+            <p>
+                Hi, I’m <strong>Muhammad Ariful Islam</strong>, also known as Arif, a highly motivated and curious individual with a strong passion for learning new things and exploring unknown areas. I have a deep interest in <strong>software engineering</strong> and <strong>robotics</strong>, and I am continuously working to improve my skills in technology. I am dedicated, self-driven, and always willing to take on new challenges to grow both personally and professionally.
+            </p>
+
+            <p>
+                Beyond academics, I have a passion for working on personal projects that combine software, hardware, and sensors to build practical applications. My hobbies include experimenting with new tech ideas, solving problems, and pushing my boundaries in the field of robotics. Additionally, I run a small food cart business
+                (<a href="https://www.foodpanda.com.bd/restaurant/urnm/burger-express-dwp" target="_blank">Burger Express Dwp.</a>),
+                where I develop real-world skills in entrepreneurship, customer management, and decision-making.
+            </p>
+
+            <ul>
+                <li><strong>Blood:</strong> B<sup>+</sup></li>
+                <li><strong>Citizen:</strong> Bangladesh</li>
+                <li><strong>Address:</strong> 1206, Vashantek, Dhaka, Bangladesh</li>
+                <li><strong>Language:</strong> English, Bangla, Hindi</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutSection = document.querySelector("#about");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                aboutSection.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.25
+    });
+
+    if (aboutSection) {
+        observer.observe(aboutSection);
+    }
+});
+</script>
+
+
+            <!-- Random Facts Section -->
+                <div class="random-facts" id="random-facts">
+                    <img src="1000024435-01.jpeg" alt="Arif on screen">
+                    <div class="random-facts-content">
+                        <h2>Random Facts</h2>
+                        <ul>
+                            <li>☕ I drink a lot of tea and coffee</li>
+                            <li>🦥 Sleep like a sloth</li>
+                            <li>🌿 Love to enjoy nature alone</li>
+                            <li>🍳 I love to cook (and eat)</li>
+                            <li>🚀 Always thinking about future goals and success</li>
+                            <li>💸 Dream of a billionaire lifestyle</li>
+                            <li>⚡ Get addicted to things fast</li>
+                            <li>🎧 I enjoy music while working</li>
+                            <li>🧼 I'm a bit of a clean freak</li>
+                            <li>🤖 Interested in robotics and technology</li>
+                            <li>🌙 Muhammad is my idol</li>
+                        </ul>
+                    </div>
+                </div>
+
+            <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const randomFacts = document.querySelector(".random-facts");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                randomFacts.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.25
+    });
+
+    if (randomFacts) {
+        observer.observe(randomFacts);
+    }
+});
+</script>
+
+           <!-- Education Section -->
+<section id="education">
+    <div class="education-header">
+        <h1>Education</h1>
+    </div>
+
+    <div class="education-grid">
+        <div class="education-card">
+            <div class="edu-year">2023-2025</div>
+            <img src="Screenshot 2024-12-20 231536.png" alt="VGC Icon">
+            <h2>Higher Secondary Certificate (HSC) - 4.58</h2>
+            <h3>Vashantek Government College</h3>
+            <p>Studying core science subjects including Physics, Chemistry, ICT, Math, and English.</p>
+        </div>
+
+        <div class="education-card">
+            <div class="edu-year">2021-2023</div>
+            <img src="Screenshot 2024-12-20 231859.png" alt="BSC Icon">
+            <h2>Secondary School Certificate (SSC) - 5.00</h2>
+            <h3>Bhashantek School and College</h3>
+            <p>Graduated with distinction in Science and participated in school events and programs.</p>
+        </div>
+
+        <div class="education-card">
+            <div class="edu-year">2020</div>
+            <img src="Screenshot 2024-12-20 232710.png" alt="LCCS Icon">
+            <h2>Junior School Certificate (JSC) - 5.00</h2>
+            <h3>Little Child Care School</h3>
+            <p>Completed primary and junior education with strong academic performance and involvement in creative programs.</p>
+        </div>
+
+        <div class="education-card">
+            <div class="edu-year">2017</div>
+            <img src="Screenshot 2024-12-20 232710.png" alt="LCCS Icon">
+            <h2>Primary Scholarship Examination (PSE) - 5.00</h2>
+            <h3>Little Child Care School</h3>
+            <p>Completed PEC with strong results, balancing academic excellence with a passion for creative arts and school-level competitions.</p>
+        </div>
+
+        <div class="education-card">
+            <div class="edu-year">2026</div>
+            <img src="images (1).png" alt="British Council Icon">
+            <h2>International English Language Testing System</h2>
+            <h3>British Council</h3>
+            <p><strong>Overall:</strong> 6.5</p>
+            <p><strong>Validity:</strong> 7th April, 2028</p>
+        </div>
+    </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const educationSection = document.querySelector("#education");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                educationSection.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    if (educationSection) {
+        observer.observe(educationSection);
+    }
+});
+</script>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <div class="skills-header">
+        <h2>Professional Skills</h2>
+        <p>Strengths that define how I work, build, lead, and grow.</p>
+    </div>
+
+    <div class="skills-wrapper">
+        <div class="skill-box" data-width="80%">
+            <div class="skill-top">
+                <div class="skill-icon">L</div>
+                <div class="skill-badge">80%</div>
+            </div>
+            <h3>Leadership</h3>
+            <p>Leading people with confidence, planning, and responsibility.</p>
+            <div class="skill-track">
+                <div class="skill-fill blue"></div>
+            </div>
+        </div>
+
+        <div class="skill-box" data-width="70%">
+            <div class="skill-top">
+                <div class="skill-icon">P</div>
+                <div class="skill-badge">70%</div>
+            </div>
+            <h3>Problem Solving</h3>
+            <p>Breaking down challenges and finding practical smart solutions.</p>
+            <div class="skill-track">
+                <div class="skill-fill red"></div>
+            </div>
+        </div>
+
+        <div class="skill-box" data-width="50%">
+            <div class="skill-top">
+                <div class="skill-icon">R</div>
+                <div class="skill-badge">50%</div>
+            </div>
+            <h3>Robotics</h3>
+            <p>Passionate about combining hardware, sensors, and software logic.</p>
+            <div class="skill-track">
+                <div class="skill-fill orange"></div>
+            </div>
+        </div>
+
+        <div class="skill-box" data-width="90%">
+            <div class="skill-top">
+                <div class="skill-icon">E</div>
+                <div class="skill-badge">90%</div>
+            </div>
+            <h3>Entrepreneurship</h3>
+            <p>Building ideas, managing risk, and turning plans into real work.</p>
+            <div class="skill-track">
+                <div class="skill-fill green"></div>
+            </div>
+        </div>
+
+        <div class="skill-box" data-width="60%">
+            <div class="skill-top">
+                <div class="skill-icon">S</div>
+                <div class="skill-badge">60%</div>
+            </div>
+            <h3>Public Speaking</h3>
+            <p>Communicating ideas clearly and confidently in front of others.</p>
+            <div class="skill-track">
+                <div class="skill-fill pink"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const skillsSection = document.querySelector("#skills");
+    const skillBoxes = document.querySelectorAll(".skill-box");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                skillsSection.classList.add("show");
+
+                skillBoxes.forEach((box) => {
+                    const fill = box.querySelector(".skill-fill");
+                    const width = box.getAttribute("data-width");
+                    if (fill) {
+                        fill.style.width = width;
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.25
+    });
+
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    }
+});
+</script>
+
+<!-- Achievements Section -->
+<section id="achievements-section">
+    <div class="achievements-header">
+        <h2>Achievements</h2>
+        <p>Milestones, recognition, and moments that shaped my journey.</p>
+    </div>
+
+    <div class="achievements-grid">
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="IMG_2852.JPG.jpeg" alt="Academic excellence award">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Academic Excellence</span>
+                <p>Awarded first place in school for outstanding academic excellence.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="Shikho certificate .png" alt="Shikho certificate">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Recognition</span>
+                <p>Received a letter of congratulations from Shikho and Prothom Alo.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="IMG_2822.JPG" alt="GPA achievement">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Top Result</span>
+                <p>Achieved a remarkable GPA at Bhashantek School and College.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="IMG-20230428-WA0066.jpg" alt="Tutoring activity">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Community Work</span>
+                <p>Volunteered as an academic tutor to support children in learning.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="Screenshot 2026-04-12 071510.png" alt="English proficiency certificate">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Certification</span>
+                <p>Earned an English proficiency certificate from the British Council.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="IMG_2850.JPG.jpeg" alt="Academic excellence recognition">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Honor</span>
+                <p>Honored by Shikho for continued academic excellence and dedication.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const achievementsSection = document.querySelector("#achievements-section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                achievementsSection.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    if (achievementsSection) {
+        observer.observe(achievementsSection);
+    }
+});
+</script>
+
+<!-- Projects Section -->
+<section id="projects">
+    <div class="projects-header">
+        <h2 class="section-title">Projects</h2>
+        <p>Selected works that reflect my creativity, problem-solving, and entrepreneurial mindset.</p>
+    </div>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+            <div class="project-top">
+                <span class="project-badge">Web Project</span>
+            </div>
+
+            <h3>Personal Portfolio Website</h3>
+
+            <p>
+                I designed and developed a personal portfolio website to showcase my academic background, skills, and projects. It was built using <strong>HTML, CSS, and JavaScript</strong>, with the help of <strong>artificial intelligence</strong> to make tasks easier, improve workflow efficiency, and support my work in different areas of development.
+            </p>
+
+            <ul>
+                <li>Structured a clean and modern layout</li>
+                <li>Built with HTML, CSS, and JavaScript</li>
+                <li>Used artificial intelligence to simplify tasks and improve productivity</li>
+                <li>Focused on user-friendly navigation and better presentation</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="https://tachyonarif.github.io/Arif-s-protfolio/" target="_blank">Live Website</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-top">
+                <span class="project-badge">Business Project</span>
+            </div>
+
+            <h3>Founder - Burger Express DWP</h3>
+
+            <p>
+                I independently founded and managed Burger Express DWP, where I developed strong <strong>entrepreneurship skills</strong> through real-world business operations, customer service, budgeting, branding, and decision-making.
+            </p>
+
+            <ul>
+                <li>Built hands-on entrepreneurship experience by starting and running my own food business</li>
+                <li>Managed daily operations, food preparation, and service quality</li>
+                <li>Handled customers and improved satisfaction through direct communication</li>
+                <li>Processed online orders through Foodpanda and managed delivery coordination</li>
+                <li>Worked on pricing, budgeting, income tracking, and business planning</li>
+                <li>Strengthened leadership, responsibility, and decision-making in a real business environment</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="https://www.facebook.com/burger.exs" target="_blank">Facebook</a>
+                <a href="https://www.foodpanda.com.bd/restaurant/urnm/burger-express-dwp" target="_blank">Foodpanda</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const projectsSection = document.querySelector("#projects");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                projectsSection.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    if (projectsSection) {
+        observer.observe(projectsSection);
+    }
+});
+</script>
+
+</section>
+<!-- Contact Section -->
+<section id="contact">
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LEFT SIDE -->
+            <div class="footer-left">
+                <h3>Contact Info</h3>
+                <p>📞 Phone: +880 1636023201</p>
+                <p>📧 Email: arifg2439@gmail.com</p>
+                <p>📍 Location: Dhaka, Bangladesh</p>
+            </div>
+
+            <!-- CENTER -->
+<section class="visitor-minimal">
+    <h2>Live Visitors</h2>
+    <a href="https://mapmyvisitors.com/web/1c3u9" title="Visit tracker" target="_blank">
+        <img src="https://mapmyvisitors.com/map.png?cl=69b270&w=a&t=tt&d=ukUElTIOWCC-nCSZMEky-Ht7zxIQUq2E6r60ZkQ05Bs&co=ffffff&ct=808080" alt="Visitor map">
+    </a>
+</section>
+
+
+
+            <!-- RIGHT SIDE -->
+            <div class="footer-right">
+                <h3>Follow Me</h3>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/mai2006.mai" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@mdai2006" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/tachyonarif/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://github.com/tachyonarif" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 All Rights Reserved | Made with ❤️ by <span>Ariful Islam</span></p>
+        </div>
+    </footer>
+</section>
+<!-- GAME BUTTON -->
+<a href="fun.html" class="game-toggle" title="Play Games">
+    🎮
+</a>
+
+<!-- THEME TOGGLE -->
+<button id="theme-toggle" class="theme-toggle">🌙</button>
+<audio id="theme-sound" preload="auto">
+    <source src="dragon-studio-light-switch-on-382714.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    const themeSound = document.getElementById("theme-sound");
+
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-theme");
+        toggleBtn.textContent = "☀️";
+    } else {
+        toggleBtn.textContent = "🌙";
+    }
+
+    toggleBtn.addEventListener("click", function () {
+        themeSound.currentTime = 0;
+        themeSound.play();
+
+        body.classList.toggle("dark-theme");
+
+        if (body.classList.contains("dark-theme")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
+    });
+});
+</script>
+<!-- JAVASCRIPT -->
+<script>
+const section = document.querySelector('.skills-section');
+
+window.addEventListener('scroll', () => {
+    const rect = section.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.remove("active"); 
+        void section.offsetWidth; // reset animation
+        section.classList.add("active");
+
+        document.querySelectorAll(".progress-fill").forEach(bar => {
+            let width = bar.style.width;
+            bar.style.height = width;
+        });
+    }
+});
+const items = document.querySelectorAll('.random-facts-content ul li');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+items.forEach(item => {
+    observer.observe(item);
+});
+</script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration
+    once: true,     // only animate once when scrolling
+  });
+</script>
+</body>
+</html>

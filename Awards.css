@@ -1,0 +1,197 @@
+/* ===== ACHIEVEMENTS SECTION ===== */
+#achievements-section {
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.achievements-header {
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.achievements-header h2 {
+    font-size: 2.9em;
+    margin-bottom: 12px;
+    color: #0b5ed7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.22);
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.8s ease;
+}
+
+.achievements-header p {
+    font-size: 1.05em;
+    color: #64748b;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+/* GRID */
+.achievements-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+/* CARD */
+.achievement-card {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(11, 94, 215, 0.08);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.45) inset;
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(45px) scale(0.96);
+}
+
+.achievement-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.10), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.achievement-card:hover::before {
+    opacity: 1;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        0 28px 60px rgba(11, 94, 215, 0.14),
+        0 0 0 1px rgba(56, 189, 248, 0.10) inset;
+}
+
+/* IMAGE */
+.achievement-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.achievement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease, filter 0.9s ease;
+    filter: brightness(0.75) blur(5px);
+}
+
+/* CONTENT */
+.achievement-content {
+    padding: 22px 20px 24px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.achievement-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.20);
+}
+
+.achievement-content p {
+    margin: 0;
+    font-size: 0.98em;
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* ACTIVE STATE */
+#achievements-section.show .achievements-header h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#achievements-section.show .achievements-header p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+
+#achievements-section.show .achievement-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+#achievements-section.show .achievement-card .achievement-image img {
+    filter: brightness(1) blur(0);
+}
+
+.achievement-card:hover .achievement-image img {
+    transform: scale(1.08);
+}
+
+/* STAGGER */
+#achievements-section.show .achievement-card:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+#achievements-section.show .achievement-card:nth-child(2) {
+    transition-delay: 0.28s;
+}
+
+#achievements-section.show .achievement-card:nth-child(3) {
+    transition-delay: 0.41s;
+}
+
+#achievements-section.show .achievement-card:nth-child(4) {
+    transition-delay: 0.54s;
+}
+
+#achievements-section.show .achievement-card:nth-child(5) {
+    transition-delay: 0.67s;
+}
+
+#achievements-section.show .achievement-card:nth-child(6) {
+    transition-delay: 0.80s;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #achievements-section {
+        padding: 80px 16px;
+    }
+
+    .achievements-header h2 {
+        font-size: 2.1em;
+        letter-spacing: 1px;
+    }
+
+    .achievements-header p {
+        font-size: 0.98em;
+    }
+
+    .achievement-image {
+        height: 200px;
+    }
+
+    .achievement-content {
+        padding: 18px 16px 20px;
+    }
+}

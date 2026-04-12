@@ -1,0 +1,307 @@
+/* ===== FOOTER ===== */
+.footer {
+    background: #ffffff;
+    color: #1e293b;
+    padding: 50px 20px 20px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* CONTAINER */
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* SAME 3-COLUMN STRUCTURE */
+.footer-left,
+.visitor-minimal,
+.footer-right {
+    flex: 1;
+    min-width: 260px;
+}
+
+/* LEFT SIDE */
+.footer-left h3,
+.footer-right h3,
+.visitor-minimal h2 {
+    color: #0b5ed7;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.footer-left p {
+    margin: 10px 0;
+    font-size: 0.96rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* CENTER VISITOR */
+.visitor-minimal {
+    text-align: center;
+}
+
+.visitor-minimal a {
+    display: inline-block;
+}
+
+.visitor-minimal img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    image-rendering: auto;
+}
+
+.visitor-minimal img:hover {
+    transform: scale(1.03);
+}
+
+/* RIGHT SIDE */
+.footer-right {
+    text-align: right;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f8fafc;
+    color: #0b5ed7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 1px solid #dbeafe;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #0b5ed7;
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(11, 94, 215, 0.18);
+}
+
+/* BOTTOM */
+.footer-bottom {
+    max-width: 1100px;
+    margin: 35px auto 0;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 18px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #475569;
+}
+
+.footer-bottom span {
+    color: #0b5ed7;
+    font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-left,
+    .visitor-minimal,
+    .footer-right {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .visitor-minimal img {
+        max-width: 100%;
+        width: auto;
+    }
+}
+:root {
+    --bg: #ffffff;
+    --section-bg: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --text: #0f172a;
+    --text-soft: #475569;
+    --accent: #0b5ed7;
+    --border: rgba(11, 94, 215, 0.08);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme {
+    --bg: #0f172a;
+    --section-bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --text-soft: #cbd5e1;
+    --accent: #38bdf8;
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* MAIN */
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* SECTIONS */
+#about,
+#education,
+#projects,
+#achievements-section,
+.skills-section,
+#contact,
+.footer,
+.random-facts {
+    background: var(--section-bg);
+    color: var(--text);
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* HEADINGS */
+.about-header h1,
+.education-header h1,
+.section-title,
+.achievements-header h2,
+.skills-header h2,
+.random-facts-content h2,
+.footer-left h3,
+.footer-right h3,
+.visitor-minimal h2 {
+    color: var(--accent);
+}
+
+/* PARAGRAPHS / NORMAL TEXT */
+.about-text,
+.about-text p,
+.education-card p,
+.project-card p,
+.achievement-content p,
+.skill-box p,
+.footer-left p,
+.footer-bottom p,
+.project-card ul li,
+.random-facts-content ul li {
+    color: var(--text-soft);
+}
+
+/* CARDS */
+.about-content,
+.education-card,
+.project-card,
+.achievement-card,
+.skill-box,
+.random-facts-content ul li {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: background 0.4s ease, color 0.4s ease, border 0.4s ease;
+}
+
+/* RANDOM FACTS LIST DARK FIX */
+body.dark-theme .random-facts-content ul li {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark-theme .random-facts-content ul li:hover {
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    color: #ffffff;
+}
+
+/* FOOTER DARK FIX */
+body.dark-theme .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .footer-social a {
+    background: #1e293b;
+    color: #38bdf8;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* TOGGLE BUTTON */
+.theme-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    background: linear-gradient(135deg, #cfe6ff, #595959);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.08);
+}
+/* GAME BUTTON (above theme button) */
+.game-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 90px; /* theme button-এর উপরে থাকবে */
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+
+    z-index: 9999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.game-toggle:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* your existing theme button stays below */
+.theme-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}

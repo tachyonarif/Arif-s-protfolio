@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have Some Fun | Ariful Islam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-1: #fff8ef;
+            --bg-2: #ffe9d6;
+            --bg-3: #ffd6b8;
+            --text-main: #2a1f16;
+            --text-soft: #6b4a3a;
+            --accent-red: #ef4444;
+            --accent-orange: #f97316;
+            --accent-yellow: #f59e0b;
+            --card-bg: rgba(255, 255, 255, 0.68);
+            --card-border: rgba(138, 44, 13, 0.08);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(255, 180, 80, 0.18), transparent 22%),
+                radial-gradient(circle at top right, rgba(255, 80, 80, 0.12), transparent 25%),
+                linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        .fun-page {
+            width: 100%;
+            min-height: 100vh;
+            padding: 36px 20px 80px;
+            position: relative;
+        }
+
+        .fun-page::before,
+        .fun-page::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+
+        .fun-page::before {
+            width: 220px;
+            height: 220px;
+            top: 80px;
+            left: -50px;
+            background: rgba(255, 174, 66, 0.28);
+        }
+
+        .fun-page::after {
+            width: 280px;
+            height: 280px;
+            right: -70px;
+            bottom: 120px;
+            background: rgba(255, 99, 71, 0.18);
+        }
+
+        .fun-wrap {
+            max-width: 1250px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fun-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 34px;
+            flex-wrap: wrap;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 600;
+            box-shadow: 0 14px 28px rgba(239, 68, 68, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 32px rgba(239, 68, 68, 0.28);
+        }
+
+        .fun-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .fun-hero h1 {
+            font-size: 3.1rem;
+            line-height: 1.08;
+            color: #8a2c0d;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 10px 24px rgba(138, 44, 13, 0.12);
+        }
+
+        .fun-hero p {
+            max-width: 820px;
+            margin: 0 auto;
+            color: var(--text-soft);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .games-stack {
+            display: grid;
+            gap: 36px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            box-shadow:
+                0 24px 50px rgba(94, 45, 16, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(12px);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 28px 28px 0;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: #8a2c0d;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-soft);
+            line-height: 1.75;
+        }
+
+        .game-shell {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 28px;
+            align-items: start;
+            padding: 28px;
+        }
+
+        .game-panel,
+        .game-stage-card,
+        .quiz-panel,
+        .quiz-stage {
+            background: rgba(255, 255, 255, 0.58);
+            border: 1px solid rgba(138, 44, 13, 0.08);
+            border-radius: 28px;
+            box-shadow:
+                0 24px 50px rgba(94, 45, 16, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(12px);
+        }
+
+        .game-panel,
+        .quiz-panel {
+            padding: 28px 24px;
+        }
+
+        .game-panel h3,
+        .quiz-panel h3 {
+            font-size: 1.4rem;
+            color: #8a2c0d;
+            margin-bottom: 18px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff6ea, #ffe4c9);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(249, 115, 22, 0.1);
+        }
+
+        .info-box span {
+            display: block;
+            font-size: 0.9rem;
+            color: #7c4a30;
+            margin-bottom: 8px;
+        }
+
+        .info-box strong {
+            font-size: 2rem;
+            color: var(--accent-red);
+        }
+
+        .game-panel p,
+        .quiz-panel p {
+            color: var(--text-soft);
+            font-size: 0.96rem;
+            line-height: 1.7;
+            margin: 14px 0 18px;
+        }
+
+        .game-panel ul,
+        .quiz-panel ul {
+            list-style: none;
+            margin: 0 0 22px;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .game-panel ul li,
+        .quiz-panel ul li {
+            background: rgba(255, 244, 230, 0.72);
+            border-radius: 14px;
+            padding: 12px 14px;
+            color: #704734;
+            font-size: 0.92rem;
+        }
+
+        .game-btn,
+        .quiz-btn,
+        .answer-btn {
+            border: none;
+            border-radius: 999px;
+            padding: 14px 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-yellow));
+            box-shadow: 0 14px 28px rgba(239, 68, 68, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+        }
+
+        .game-btn:hover,
+        .quiz-btn:hover,
+        .answer-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 34px rgba(239, 68, 68, 0.28);
+        }
+
+        .game-stage-card,
+        .quiz-stage {
+            padding: 20px;
+        }
+
+        .stage-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .stage-top h3 {
+            color: #8a2c0d;
+            font-size: 1.35rem;
+        }
+
+        .mini-badge {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+
+        #burger-game {
+            position: relative;
+            width: 100%;
+            height: 560px;
+            border-radius: 26px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at top, rgba(255,255,255,0.55), transparent 30%),
+                linear-gradient(180deg, #8fd3ff 0%, #d7f1ff 38%, #fef3c7 38%, #f4c06c 100%);
+            border: 2px solid rgba(255, 255, 255, 0.45);
+            box-shadow: inset 0 -50px 80px rgba(96, 53, 17, 0.08);
+            cursor: none;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255,255,255,0.95);
+            border-radius: 999px;
+            filter: blur(0.5px);
+            opacity: 0.9;
+            animation: floatCloud linear infinite;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: "";
+            position: absolute;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50%;
+        }
+
+        .cloud::before {
+            width: 55%;
+            height: 100%;
+            left: 10%;
+            top: -35%;
+        }
+
+        .cloud::after {
+            width: 45%;
+            height: 85%;
+            right: 8%;
+            top: -20%;
+        }
+
+        @keyframes floatCloud {
+            from { transform: translateX(-140px); }
+            to { transform: translateX(calc(100% + 180px)); }
+        }
+
+        .ground-decor {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 110px;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.12) 0,
+                    rgba(255,255,255,0.12) 18px,
+                    transparent 18px,
+                    transparent 38px
+                ),
+                linear-gradient(180deg, #d97706, #92400e);
+        }
+
+        .stall {
+            position: absolute;
+            left: 28px;
+            bottom: 82px;
+            width: 135px;
+            height: 120px;
+        }
+
+        .stall-roof {
+            width: 100%;
+            height: 30px;
+            border-radius: 14px 14px 8px 8px;
+            background: repeating-linear-gradient(90deg, #ef4444 0 22px, #fff7ed 22px 44px);
+            box-shadow: 0 8px 0 rgba(0,0,0,0.08);
+        }
+
+        .stall-body {
+            width: 100%;
+            height: 90px;
+            background: linear-gradient(180deg, #fef3c7, #fde68a);
+            border-radius: 0 0 16px 16px;
+            border: 3px solid rgba(120, 53, 15, 0.18);
+            position: relative;
+        }
+
+        .stall-body::before,
+        .stall-body::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 100%;
+            top: 0;
+            background: rgba(120, 53, 15, 0.2);
+        }
+
+        .stall-body::before { left: 16px; }
+        .stall-body::after { right: 16px; }
+
+        #basket {
+            position: absolute;
+            bottom: 26px;
+            left: 50%;
+            width: 118px;
+            height: 38px;
+            transform: translateX(-50%);
+            border-radius: 0 0 30px 30px;
+            background: linear-gradient(180deg, #9a3412, #7c2d12);
+            box-shadow: inset 0 6px 10px rgba(255,255,255,0.15), 0 10px 18px rgba(0,0,0,0.2);
+        }
+
+        #basket::before {
+            content: "";
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 84px;
+            height: 14px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #fdba74, #fb923c);
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.18);
+        }
+
+        .burger {
+            position: absolute;
+            top: -50px;
+            font-size: 38px;
+            line-height: 1;
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.16));
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .score-floating {
+            position: absolute;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #16a34a;
+            pointer-events: none;
+            animation: popScore 0.8s ease forwards;
+            text-shadow: 0 4px 10px rgba(255,255,255,0.55);
+        }
+
+        @keyframes popScore {
+            0% { opacity: 0; transform: translateY(0) scale(0.6); }
+            25% { opacity: 1; transform: translateY(-12px) scale(1); }
+            100% { opacity: 0; transform: translateY(-45px) scale(1.05); }
+        }
+
+        .game-message,
+        .quiz-message {
+            margin-top: 16px;
+            text-align: center;
+            color: #7c4a30;
+            font-weight: 600;
+            min-height: 26px;
+        }
+
+        .quiz-shell {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 28px;
+            padding: 28px;
+            align-items: start;
+        }
+
+        .burger-preview-wrap {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .quiz-stage {
+            min-height: 520px;
+        }
+
+        .quiz-question-box {
+            background: linear-gradient(135deg, #fff8ef, #ffedd5);
+            border: 1px solid rgba(249, 115, 22, 0.08);
+            border-radius: 22px;
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+
+        .quiz-question-box h4 {
+            font-size: 1.35rem;
+            color: #8a2c0d;
+            margin-bottom: 8px;
+        }
+
+        .quiz-question-box p {
+            color: var(--text-soft);
+            line-height: 1.7;
+        }
+
+        .question-counter {
+            display: inline-block;
+            margin-bottom: 14px;
+            background: #fff;
+            color: #ef4444;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        .answers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .answer-btn {
+            text-align: left;
+            border-radius: 20px;
+            padding: 16px 18px;
+            background: rgba(255,255,255,0.78);
+            color: #6b3d22;
+            border: 1px solid rgba(249, 115, 22, 0.12);
+            box-shadow: none;
+        }
+
+        .answer-btn:hover {
+            color: #fff;
+            background: linear-gradient(135deg, #ef4444, #f97316);
+        }
+
+        .answer-btn.correct {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+        }
+
+        .answer-btn.wrong {
+            background: linear-gradient(135deg, #fb7185, #ef4444);
+            color: white;
+        }
+
+        .quiz-controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-btn.secondary {
+            background: linear-gradient(135deg, #64748b, #475569);
+            box-shadow: 0 14px 28px rgba(71, 85, 105, 0.2);
+        }
+
+        .burger-preview-card {
+            background: rgba(255,255,255,0.62);
+            border: 1px solid rgba(138, 44, 13, 0.08);
+            border-radius: 26px;
+            padding: 22px 18px;
+            min-height: 420px;
+            box-shadow: 0 18px 36px rgba(94, 45, 16, 0.06);
+        }
+
+        .burger-preview-card h4 {
+            color: #8a2c0d;
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .burger-preview {
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
+            padding: 10px 0 18px;
+        }
+
+        .burger-layer {
+            width: 180px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: rgba(0,0,0,0.55);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .layer-top-bun,
+        .layer-bottom-bun {
+            background: linear-gradient(180deg, #fbbf24, #d97706);
+            height: 42px;
+            color: #6b3d22;
+        }
+
+        .layer-toast {
+            background: linear-gradient(180deg, #f59e0b, #b45309);
+            height: 10px;
+            width: 170px;
+        }
+
+        .layer-sauce {
+            height: 8px;
+            width: 170px;
+            border-radius: 999px;
+        }
+
+        .layer-lettuce {
+            background: linear-gradient(180deg, #4ade80, #16a34a);
+            height: 14px;
+            width: 176px;
+            clip-path: polygon(0 55%, 8% 25%, 16% 65%, 24% 28%, 32% 72%, 40% 30%, 48% 66%, 56% 22%, 64% 70%, 72% 30%, 80% 64%, 88% 24%, 96% 62%, 100% 50%, 100% 100%, 0 100%);
+        }
+
+        .layer-tomato {
+            background: linear-gradient(180deg, #fb7185, #dc2626);
+            height: 12px;
+            width: 166px;
+            border-radius: 999px;
+        }
+
+        .layer-onion {
+            background: linear-gradient(180deg, #e9d5ff, #c084fc);
+            height: 10px;
+            width: 164px;
+            border-radius: 999px;
+        }
+
+        .layer-cheese {
+            background: linear-gradient(180deg, #fde047, #facc15);
+            height: 16px;
+            width: 170px;
+            clip-path: polygon(0 0, 100% 0, 94% 100%, 8% 100%);
+        }
+
+        .layer-patty {
+            background: linear-gradient(180deg, #7c2d12, #4a1d0c);
+            height: 24px;
+            width: 172px;
+        }
+
+        .layer-pickle {
+            background: linear-gradient(180deg, #a3e635, #65a30d);
+            height: 10px;
+            width: 150px;
+            border-radius: 999px;
+        }
+
+        .burger-preview-note {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #fff8ef, #ffedd5);
+            border-radius: 24px;
+            padding: 28px;
+            text-align: center;
+        }
+
+        .result-box h4 {
+            color: #8a2c0d;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .result-box p {
+            color: var(--text-soft);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .result-score {
+            font-size: 2.2rem;
+            color: #ef4444;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 1100px) {
+            .burger-preview-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .game-shell,
+            .quiz-shell {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fun-page {
+                padding: 24px 14px 70px;
+            }
+
+            .fun-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .fun-hero p {
+                font-size: 0.98rem;
+            }
+
+            .section-header,
+            .game-shell,
+            .quiz-shell {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            #burger-game {
+                height: 450px;
+                cursor: default;
+            }
+
+            #basket {
+                width: 96px;
+                height: 32px;
+            }
+
+            .answers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .burger-layer {
+                width: 150px;
+            }
+
+            .layer-top-bun,
+            .layer-bottom-bun {
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="fun-page">
+        <div class="fun-wrap">
+            <div class="fun-topbar">
+                <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back To Portfolio</a>
+            </div>
+
+            <div class="fun-hero">
+                <h1>Have Some Fun</h1>
+                <p>
+                    Two interactive burger-themed games in one page: catch the falling burgers, then test whether you really know how to build a perfect burger step by step.
+                </p>
+            </div>
+
+            <div class="games-stack">
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2>Catch The Burger</h2>
+                        <p>Move your mouse and catch as many burgers as you can before time runs out. Burgers that hit the ground are missed and give no score.</p>
+                    </div>
+
+                    <div class="game-shell">
+                        <aside class="game-panel">
+                            <h3>Game Panel</h3>
+
+                            <div class="info-box">
+                                <span>Current Score</span>
+                                <strong id="score">0</strong>
+                            </div>
+
+                            <div class="info-box">
+                                <span>Best Score</span>
+                                <strong id="best-score">0</strong>
+                            </div>
+
+                            <div class="info-box">
+                                <span>Time Left</span>
+                                <strong id="time-left">20</strong>
+                            </div>
+
+                            <p>Catch the burgers with your basket before they hit the ground. This version falls slower so everyone can enjoy it.</p>
+
+                            <ul>
+                                <li>Move inside the game area</li>
+                                <li>Catch burgers to gain points</li>
+                                <li>Missed burgers give zero score</li>
+                                <li>You have 20 seconds per round</li>
+                            </ul>
+
+                            <button id="start-game-btn" class="game-btn">Start Game</button>
+                            <div class="game-message" id="game-message">Ready when you are.</div>
+                        </aside>
+
+                        <section class="game-stage-card">
+                            <div class="stage-top">
+                                <h3>Burger Express Mini Game</h3>
+                                <span class="mini-badge">Arcade Mode</span>
+                            </div>
+
+                            <div id="burger-game">
+                                <div class="cloud" style="top: 55px; width: 95px; height: 34px; animation-duration: 22s;"></div>
+                                <div class="cloud" style="top: 110px; width: 120px; height: 40px; animation-duration: 28s; animation-delay: -8s;"></div>
+                                <div class="cloud" style="top: 165px; width: 85px; height: 30px; animation-duration: 18s; animation-delay: -4s;"></div>
+
+                                <div class="stall">
+                                    <div class="stall-roof"></div>
+                                    <div class="stall-body"></div>
+                                </div>
+
+                                <div class="ground-decor"></div>
+                                <div id="basket"></div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="section-card">
+                    <div class="section-header">
+                        <h2>Build A Burger Quiz</h2>
+                        <p>Answer 12 burger-making questions step by step. Choose the best ingredient or action each time and watch your burger build live on the right side.</p>
+                    </div>
+
+                    <div class="quiz-shell">
+                        <aside class="quiz-panel">
+                            <h3>Quiz Panel</h3>
+
+                            <div class="info-box">
+                                <span>Quiz Score</span>
+                                <strong id="quiz-score">0</strong>
+                            </div>
+
+                            <div class="info-box">
+                                <span>Question</span>
+                                <strong id="quiz-progress">0/12</strong>
+                            </div>
+
+                            <div class="info-box">
+                                <span>Status</span>
+                                <strong id="quiz-status">Ready</strong>
+                            </div>
+
+                            <p>First we ask if the player knows how to make a burger. Then the game walks through each real step with ingredient choices.</p>
+
+                            <ul>
+                                <li>12 burger-building questions</li>
+                                <li>Ingredient-based answers</li>
+                                <li>Wrong answers lower your score</li>
+                                <li>Your burger preview updates live</li>
+                            </ul>
+
+                            <button id="start-quiz-btn" class="quiz-btn">Start Burger Quiz</button>
+                            <div class="quiz-message" id="quiz-message">Think you know how to make a burger?</div>
+                        </aside>
+
+                        <section class="quiz-stage">
+                            <div class="burger-preview-wrap">
+                                <div>
+                                    <div class="stage-top">
+                                        <h3>Kitchen Challenge</h3>
+                                        <span class="mini-badge">Quiz Mode</span>
+                                    </div>
+
+                                    <div id="quiz-content">
+                                        <div class="result-box">
+                                            <h4>Ready To Cook?</h4>
+                                            <p>Click the button to begin the burger-making challenge. Answer each step carefully and build the best burger possible.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <aside class="burger-preview-card">
+                                    <h4>Your Burger</h4>
+                                    <div class="burger-preview" id="burger-preview">
+                                        <div class="burger-layer layer-bottom-bun">Bottom Bun</div>
+                                    </div>
+                                    <p class="burger-preview-note">Correct answers add burger layers here as you move through the quiz.</p>
+                                </aside>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            /* Catch The Burger */
+            const game = document.getElementById("burger-game");
+            const basket = document.getElementById("basket");
+            const scoreDisplay = document.getElementById("score");
+            const bestScoreDisplay = document.getElementById("best-score");
+            const timeLeftDisplay = document.getElementById("time-left");
+            const startBtn = document.getElementById("start-game-btn");
+            const gameMessage = document.getElementById("game-message");
+
+            let score = 0;
+            let bestScore = parseInt(localStorage.getItem("burgerBestScore")) || 0;
+            let timeLeft = 20;
+            let gameRunning = false;
+            let burgerInterval = null;
+            let timerInterval = null;
+
+            bestScoreDisplay.textContent = bestScore;
+
+            function moveBasket(clientX) {
+                const rect = game.getBoundingClientRect();
+                let x = clientX - rect.left;
+                const basketHalf = basket.offsetWidth / 2;
+
+                if (x < basketHalf) x = basketHalf;
+                if (x > rect.width - basketHalf) x = rect.width - basketHalf;
+
+                basket.style.left = x + "px";
+            }
+
+            game.addEventListener("mousemove", function (e) {
+                moveBasket(e.clientX);
+            });
+
+            game.addEventListener("touchmove", function (e) {
+                const touch = e.touches[0];
+                moveBasket(touch.clientX);
+            }, { passive: true });
+
+            function showFloatingScore(x, y) {
+                const scorePop = document.createElement("div");
+                scorePop.className = "score-floating";
+                scorePop.textContent = "+1";
+                scorePop.style.left = x + "px";
+                scorePop.style.top = y + "px";
+                game.appendChild(scorePop);
+                setTimeout(() => scorePop.remove(), 800);
+            }
+
+            function createBurger() {
+                if (!gameRunning) return;
+
+                const burger = document.createElement("div");
+                burger.classList.add("burger");
+                burger.textContent = "🍔";
+
+                const maxLeft = game.clientWidth - 40;
+                const randomLeft = Math.random() * maxLeft;
+                const duration = 3.8 + Math.random() * 1.8;
+
+                burger.dataset.caught = "false";
+                burger.dataset.missed = "false";
+                burger.style.left = randomLeft + "px";
+                burger.style.transition = `top ${duration}s linear`;
+                burger.style.top = "-50px";
+
+                game.appendChild(burger);
+
+                requestAnimationFrame(() => {
+                    burger.style.top = (game.clientHeight - 95) + "px";
+                });
+
+                const checkHit = setInterval(() => {
+                    if (!document.body.contains(burger)) {
+                        clearInterval(checkHit);
+                        return;
+                    }
+
+                    if (burger.dataset.caught === "true" || burger.dataset.missed === "true") {
+                        clearInterval(checkHit);
+                        return;
+                    }
+
+                    const burgerRect = burger.getBoundingClientRect();
+                    const basketRect = basket.getBoundingClientRect();
+                    const gameRect = game.getBoundingClientRect();
+
+                    const caught =
+                        burgerRect.bottom >= basketRect.top &&
+                        burgerRect.top <= basketRect.bottom &&
+                        burgerRect.left < basketRect.right &&
+                        burgerRect.right > basketRect.left;
+
+                    const missed = burgerRect.top >= gameRect.bottom - 80;
+
+                    if (caught) {
+                        burger.dataset.caught = "true";
+                        score++;
+                        scoreDisplay.textContent = score;
+                        showFloatingScore(randomLeft, burger.offsetTop);
+                        burger.remove();
+                        clearInterval(checkHit);
+                    } else if (missed) {
+                        burger.dataset.missed = "true";
+                        burger.remove();
+                        clearInterval(checkHit);
+                    }
+                }, 30);
+            }
+
+            function clearBurgers() {
+                document.querySelectorAll(".burger").forEach((burger) => burger.remove());
+            }
+
+            function endGame() {
+                gameRunning = false;
+                clearInterval(burgerInterval);
+                clearInterval(timerInterval);
+                clearBurgers();
+
+                if (score > bestScore) {
+                    bestScore = score;
+                    localStorage.setItem("burgerBestScore", bestScore);
+                    bestScoreDisplay.textContent = bestScore;
+                    gameMessage.textContent = "New high score. Nicely done.";
+                } else {
+                    gameMessage.textContent = `Game over. You caught ${score} burger${score === 1 ? "" : "s"}.`;
+                }
+
+                startBtn.textContent = "Play Again";
+            }
+
+            function startGame() {
+                if (gameRunning) return;
+
+                score = 0;
+                timeLeft = 20;
+                gameRunning = true;
+
+                scoreDisplay.textContent = score;
+                timeLeftDisplay.textContent = timeLeft;
+                gameMessage.textContent = "Catch them fast.";
+                startBtn.textContent = "Game Running";
+
+                clearBurgers();
+
+                burgerInterval = setInterval(createBurger, 950);
+
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    timeLeftDisplay.textContent = timeLeft;
+                    if (timeLeft <= 0) endGame();
+                }, 1000);
+            }
+
+            startBtn.addEventListener("click", startGame);
+
+            /* Burger Quiz */
+            const startQuizBtn = document.getElementById("start-quiz-btn");
+            const quizContent = document.getElementById("quiz-content");
+            const quizScoreEl = document.getElementById("quiz-score");
+            const quizProgressEl = document.getElementById("quiz-progress");
+            const quizStatusEl = document.getElementById("quiz-status");
+            const quizMessageEl = document.getElementById("quiz-message");
+            const burgerPreview = document.getElementById("burger-preview");
+
+            const quizQuestions = [
+                {
+                    question: "Do you know how to make a burger?",
+                    text: "Start with confidence. Are you ready to build one properly?",
+                    answers: ["Yes, let's make one", "No, not really"],
+                    correct: 0,
+                    layer: null,
+                    correctText: "Great. Let's start cooking.",
+                    wrongText: "That costs a point, but you can still try."
+                },
+                {
+                    question: "What should finish the burger at the very top?",
+                    text: "Choose the final top layer first.",
+                    answers: ["Top bun", "Tomato", "Cheese", "Patty"],
+                    correct: 0,
+                    layer: "top-bun",
+                    correctText: "Correct. The top bun stays on top.",
+                    wrongText: "Not quite. A burger is finished with a top bun."
+                },
+                {
+                    question: "Which sauce can sit under the top bun?",
+                    text: "Pick a smoky, tasty top sauce.",
+                    answers: ["Barbecue sauce", "Chocolate", "Custard", "Lemon juice"],
+                    correct: 0,
+                    layer: "bbq",
+                    correctText: "Nice. Barbecue sauce works well near the top.",
+                    wrongText: "That would be a strange top sauce."
+                },
+                {
+                    question: "Which crisp topping is often placed near the top?",
+                    text: "Choose the fresh green layer.",
+                    answers: ["Lettuce", "Rice", "Noodles", "Soup"],
+                    correct: 0,
+                    layer: "lettuce",
+                    correctText: "Right. Lettuce adds freshness.",
+                    wrongText: "Lettuce is the classic choice."
+                },
+                {
+                    question: "Which sliced vegetable adds juicy freshness?",
+                    text: "Pick the classic round slice.",
+                    answers: ["Tomato", "Banana", "Orange", "Apple"],
+                    correct: 0,
+                    layer: "tomato",
+                    correctText: "Correct. Tomato belongs here.",
+                    wrongText: "Tomato is the proper burger choice."
+                },
+                {
+                    question: "Which mild sharp ingredient is used in rings?",
+                    text: "Think of thin circular slices.",
+                    answers: ["Onion", "Potato", "Carrot", "Pumpkin"],
+                    correct: 0,
+                    layer: "onion",
+                    correctText: "Exactly. Onion adds flavor.",
+                    wrongText: "Onion is the right answer here."
+                },
+                {
+                    question: "What creamy layer makes the burger richer?",
+                    text: "Choose the classic melty option.",
+                    answers: ["Cheese", "Ice cream", "Cream cake", "Butter cookie"],
+                    correct: 0,
+                    layer: "cheese",
+                    correctText: "Perfect. Cheese is a classic burger layer.",
+                    wrongText: "Cheese is the correct burger choice."
+                },
+                {
+                    question: "Which protein is the heart of the burger?",
+                    text: "Pick the main filling.",
+                    answers: ["Beef patty", "Fish bones", "Tea leaves", "Egg shell"],
+                    correct: 0,
+                    layer: "patty",
+                    correctText: "Correct. The patty is the main part.",
+                    wrongText: "That is not a proper burger filling."
+                },
+                {
+                    question: "Which topping adds small tangy crunch?",
+                    text: "Choose the small green topping.",
+                    answers: ["Pickles", "Grapes", "Chips", "Cornflakes"],
+                    correct: 0,
+                    layer: "pickle",
+                    correctText: "Yes. Pickles add nice tang.",
+                    wrongText: "Pickles are the better burger choice."
+                },
+                {
+                    question: "Which creamy spread often goes lower in the burger?",
+                    text: "Choose the classic bun spread.",
+                    answers: ["Mayonnaise", "Shampoo", "Yogurt drink", "Jam"],
+                    correct: 0,
+                    layer: "mayo",
+                    correctText: "Good. Mayo works well near the bottom.",
+                    wrongText: "Mayonnaise is the right answer."
+                },
+                {
+                    question: "How long should you lightly toast burger buns?",
+                    text: "Choose the most reasonable timing.",
+                    answers: ["1 to 2 minutes", "20 minutes", "10 minutes per side", "Half an hour"],
+                    correct: 0,
+                    layer: "toast",
+                    correctText: "Correct. Light toasting is quick.",
+                    wrongText: "That timing is too much for burger buns."
+                },
+                {
+                    question: "What should support everything at the bottom?",
+                    text: "Choose the burger base.",
+                    answers: ["Bottom bun", "Cheese slice", "Tomato", "Lettuce"],
+                    correct: 0,
+                    layer: "bottom-bun",
+                    correctText: "Exactly. The bottom bun stays at the bottom.",
+                    wrongText: "Every burger needs a bottom bun base."
+                }
+            ];
+
+            let quizIndex = -1;
+            let quizScore = 0;
+            let selectedLayers = [];
+
+            function renderBurgerPreview() {
+                burgerPreview.innerHTML = "";
+
+                const orderedTopToBottom = [
+                    "top-bun",
+                    "bbq",
+                    "lettuce",
+                    "tomato",
+                    "onion",
+                    "cheese",
+                    "patty",
+                    "pickle",
+                    "mayo",
+                    "toast",
+                    "bottom-bun"
+                ];
+
+                orderedTopToBottom.forEach((layer) => {
+                    if (!selectedLayers.includes(layer)) return;
+
+                    const el = document.createElement("div");
+
+                    if (layer === "top-bun") {
+                        el.className = "burger-layer layer-top-bun";
+                        el.textContent = "Top Bun";
+                    } else if (layer === "bbq") {
+                        el.className = "burger-layer layer-sauce";
+                        el.style.background = "linear-gradient(180deg, #7c2d12, #4a1d0c)";
+                    } else if (layer === "lettuce") {
+                        el.className = "burger-layer layer-lettuce";
+                    } else if (layer === "tomato") {
+                        el.className = "burger-layer layer-tomato";
+                    } else if (layer === "onion") {
+                        el.className = "burger-layer layer-onion";
+                    } else if (layer === "cheese") {
+                        el.className = "burger-layer layer-cheese";
+                    } else if (layer === "patty") {
+                        el.className = "burger-layer layer-patty";
+                    } else if (layer === "pickle") {
+                        el.className = "burger-layer layer-pickle";
+                    } else if (layer === "mayo") {
+                        el.className = "burger-layer layer-sauce";
+                        el.style.background = "linear-gradient(180deg, #fff7cc, #fde68a)";
+                    } else if (layer === "toast") {
+                        el.className = "burger-layer layer-toast";
+                    } else if (layer === "bottom-bun") {
+                        el.className = "burger-layer layer-bottom-bun";
+                        el.textContent = "Bottom Bun";
+                    }
+
+                    burgerPreview.appendChild(el);
+                });
+            }
+
+            function updateQuizPanel() {
+                quizScoreEl.textContent = quizScore;
+                quizProgressEl.textContent = `${Math.max(quizIndex + 1, 0)}/${quizQuestions.length}`;
+            }
+
+            function renderQuizIntro() {
+                quizContent.innerHTML = `
+                    <div class="result-box">
+                        <h4>Ready To Cook?</h4>
+                        <p>Click the button to begin the burger-making challenge. Answer each step carefully and build the best burger possible.</p>
+                    </div>
+                `;
+                quizStatusEl.textContent = "Ready";
+                quizMessageEl.textContent = "Think you know how to make a burger?";
+            }
+
+            function renderQuestion() {
+                const q = quizQuestions[quizIndex];
+                quizStatusEl.textContent = "Playing";
+                updateQuizPanel();
+
+                const answersHTML = q.answers.map((answer, index) => `
+                    <button class="answer-btn" data-index="${index}">${answer}</button>
+                `).join("");
+
+                quizContent.innerHTML = `
+                    <div class="quiz-question-box">
+                        <span class="question-counter">Question ${quizIndex + 1} of ${quizQuestions.length}</span>
+                        <h4>${q.question}</h4>
+                        <p>${q.text}</p>
+                    </div>
+                    <div class="answers-grid">${answersHTML}</div>
+                    <div class="quiz-controls">
+                        <button class="quiz-btn secondary" id="quit-quiz-btn">Quit Quiz</button>
+                    </div>
+                `;
+
+                document.querySelectorAll(".answer-btn").forEach((btn) => {
+                    btn.addEventListener("click", handleAnswer);
+                });
+
+                const quitBtn = document.getElementById("quit-quiz-btn");
+                if (quitBtn) {
+                    quitBtn.addEventListener("click", function () {
+                        quizStarted = false;
+                        quizIndex = -1;
+                        selectedLayers = [];
+                        quizScore = 0;
+                        updateQuizPanel();
+                        renderBurgerPreview();
+                        renderQuizIntro();
+                    });
+                }
+            }
+
+            function handleAnswer(e) {
+                const q = quizQuestions[quizIndex];
+                const chosen = Number(e.currentTarget.dataset.index);
+                const buttons = document.querySelectorAll(".answer-btn");
+
+                buttons.forEach((btn) => btn.disabled = true);
+
+                if (chosen === q.correct) {
+                    e.currentTarget.classList.add("correct");
+                    quizScore += 1;
+                    quizMessageEl.textContent = q.correctText;
+
+                    if (q.layer && !selectedLayers.includes(q.layer)) {
+                        selectedLayers.push(q.layer);
+                        renderBurgerPreview();
+                    }
+                } else {
+                    e.currentTarget.classList.add("wrong");
+                    buttons[q.correct].classList.add("correct");
+                    quizScore = Math.max(0, quizScore - 1);
+                    quizMessageEl.textContent = q.wrongText;
+                }
+
+                quizScoreEl.textContent = quizScore;
+
+                setTimeout(() => {
+                    quizIndex++;
+                    if (quizIndex < quizQuestions.length) {
+                        renderQuestion();
+                    } else {
+                        renderQuizResult();
+                    }
+                }, 1200);
+            }
+
+            function renderQuizResult() {
+                quizStatusEl.textContent = "Finished";
+                quizProgressEl.textContent = `${quizQuestions.length}/${quizQuestions.length}`;
+
+                let title = "Nice Work";
+                let text = "You understand burger building pretty well.";
+
+                if (quizScore <= 3) {
+                    title = "Kitchen Rookie";
+                    text = "You need a bit more burger training, but the challenge was fun.";
+                } else if (quizScore <= 7) {
+                    title = "Burger Learner";
+                    text = "You know some steps, but there is room to improve your burger-making skills.";
+                } else if (quizScore <= 10) {
+                    title = "Burger Builder";
+                    text = "Solid performance. You clearly know how a burger comes together.";
+                } else {
+                    title = "Burger Master";
+                    text = "Excellent. You really know how to make a burger step by step.";
+                }
+
+                quizContent.innerHTML = `
+                    <div class="result-box">
+                        <h4>${title}</h4>
+                        <div class="result-score">${quizScore} / ${quizQuestions.length}</div>
+                        <p>${text}</p>
+                        <button class="quiz-btn" id="restart-quiz-btn">Play Again</button>
+                    </div>
+                `;
+
+                const restartBtn = document.getElementById("restart-quiz-btn");
+                restartBtn.addEventListener("click", startQuiz);
+            }
+
+            function startQuiz() {
+                quizStarted = true;
+                quizIndex = 0;
+                quizScore = 0;
+                selectedLayers = [];
+                renderBurgerPreview();
+                updateQuizPanel();
+                quizMessageEl.textContent = "Let’s build your burger.";
+                renderQuestion();
+            }
+
+            startQuizBtn.addEventListener("click", startQuiz);
+
+            renderBurgerPreview();
+            renderQuizIntro();
+            updateQuizPanel();
+        });
+    </script>
+</body>
+</html>
