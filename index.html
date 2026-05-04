@@ -20,6 +20,153 @@
         <link rel="stylesheet" href="fun.html">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+<style>
+/* Mobile View */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    padding: 10px 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo img {
+    height: 26px !important;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    padding: 0;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 120px 18px 50px;
+    text-align: center;
+  }
+
+  .hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #hey-text {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  #Welcome-text {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  #proverb-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  #about,
+  .random-facts,
+  #education,
+  #skills,
+  #achievements-section,
+  #projects,
+  #contact {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .about-layout,
+  .random-facts,
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-copy h1 {
+    font-size: 30px;
+  }
+
+  .about-copy h2,
+  .facts-intro,
+  .skills-header p,
+  .projects-header p,
+  .achievements-header p {
+    font-size: 15px;
+  }
+
+  .about-details,
+  .education-grid,
+  .skills-wrapper,
+  .achievements-grid,
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-wrap img,
+  .random-facts-image-wrap img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .random-facts-content ul {
+    padding-left: 0;
+  }
+
+  .random-facts-content ul li {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .education-card,
+  .skill-box,
+  .achievement-card,
+  .project-card {
+    width: 100%;
+  }
+
+  .project-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .visitor-minimal img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .game-toggle,
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -43,10 +190,10 @@
 </header>
 <!-- Hero Section -->
         <section id="home" class="hero">
-            <img src="Screenshot 2024-06-10 035050.png" alt="Your photo" class="hero-bg" />
+            <img src="ChatGPT Image May 4, 2026, 05_25_43 PM.png" alt="Your photo" class="hero-bg" />
             <div class="hero-content">
                 <h1 id="hey-text">Hi, I'm<b id="Arif"> Arif</b>  👋</h1>
-                <h2 id="Welcome-text">Aspiring Software & Robotics Engineer</h2>
+                <h2 id="Welcome-text">Aspiring Computer, Software & Robotics Engineer</h2>
                 <h4 id="proverb-text"> I was reminded recently of the great quote from the American author,<b id="Arnold-name"> Arnold Glasow</b>,
                     <br>who said: 
                     <br>
@@ -87,41 +234,61 @@ window.addEventListener("load", function () {
 
 
 <section id="about">
-    <div class="about-header">
-        <h1>About Me</h1>
-    </div>
+    <div class="about-bg-shape about-shape-1"></div>
+    <div class="about-bg-shape about-shape-2"></div>
 
-    <div class="about-content">
-        <div class="about-image">
-            <img src="1000017332.jpg" alt="My Photo">
+    <div class="about-layout">
+        <div class="about-visual">
+            <div class="about-image-wrap">
+                <img src="photo for about.png" alt="Portrait of Muhammad Ariful Islam">
+                <div class="about-image-glow"></div>
+            </div>
         </div>
 
-        <div class="about-text">
-            <p>
-                Hi, I’m <strong>Muhammad Ariful Islam</strong>, also known as Arif, a highly motivated and curious individual with a strong passion for learning new things and exploring unknown areas. I have a deep interest in <strong>software engineering</strong> and <strong>robotics</strong>, and I am continuously working to improve my skills in technology. I am dedicated, self-driven, and always willing to take on new challenges to grow both personally and professionally.
-            </p>
+        <div class="about-copy">
+            <p class="about-kicker">About Me</p>
+            <h1>Muhammad Ariful Islam</h1>
+            <h2>Aspiring Computer, Software & Robotics Engineer</h2>
 
             <p>
-                Beyond academics, I have a passion for working on personal projects that combine software, hardware, and sensors to build practical applications. My hobbies include experimenting with new tech ideas, solving problems, and pushing my boundaries in the field of robotics. Additionally, I run a small food cart business
-                (<a href="https://www.foodpanda.com.bd/restaurant/urnm/burger-express-dwp" target="_blank">Burger Express Dwp.</a>),
-                where I develop real-world skills in entrepreneurship, customer management, and decision-making.
-            </p>
+               I enjoy exploring innovative ideas and solving real-world problems through technology. I continuously work on improving my programming and technical skills while exploring robotics, AI, and intelligent systems.
 
-            <ul>
-                <li><strong>Blood:</strong> B<sup>+</sup></li>
-                <li><strong>Citizen:</strong> Bangladesh</li>
-                <li><strong>Address:</strong> 1206, Vashantek, Dhaka, Bangladesh</li>
-                <li><strong>Language:</strong> English, Bangla, Hindi</li>
-            </ul>
+                Beyond academics, I enjoy experimenting with new technologies and developing personal projects that combine software, hardware, sensors, and automation systems. I am curious, dedicated, and always eager to learn new things and take on challenges. My goal is to become a skilled engineer and contribute to innovative technologies that create a positive impact on society.
+
+            <div class="about-tags">
+                <span>beginner</span>
+                <span>Listener</span>
+                <span>Learner</span>
+            </div>
+
+            <div class="about-details">
+                <div class="about-detail">
+                    <span class="label">Blood</span>
+                    <span class="value">B<sup>+</sup></span>
+                </div>
+                <div class="about-detail">
+                    <span class="label">Citizen</span>
+                    <span class="value">Bangladesh</span>
+                </div>
+                <div class="about-detail">
+                    <span class="label">Address</span>
+                    <span class="value">1206, Vashantek, Dhaka, Bangladesh</span>
+                </div>
+                <div class="about-detail">
+                    <span class="label">Language</span>
+                    <span class="value">English, Bangla, Hindi</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const aboutSection = document.querySelector("#about");
 
-    const observer = new IntersectionObserver((entries) => {
+    const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 aboutSection.classList.add("show");
@@ -132,36 +299,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (aboutSection) {
-        observer.observe(aboutSection);
+        aboutObserver.observe(aboutSection);
     }
 });
 </script>
 
 
-            <!-- Random Facts Section -->
-                <div class="random-facts" id="random-facts">
-                    <img src="1000024435-01.jpeg" alt="Arif on screen">
-                    <div class="random-facts-content">
-                        <h2>Random Facts</h2>
-                        <ul>
-                            <li>☕ I drink a lot of tea and coffee</li>
-                            <li>🦥 Sleep like a sloth</li>
-                            <li>🌿 Love to enjoy nature alone</li>
-                            <li>🍳 I love to cook (and eat)</li>
-                            <li>🚀 Always thinking about future goals and success</li>
-                            <li>💸 Dream of a billionaire lifestyle</li>
-                            <li>⚡ Get addicted to things fast</li>
-                            <li>🎧 I enjoy music while working</li>
-                            <li>🧼 I'm a bit of a clean freak</li>
-                            <li>🤖 Interested in robotics and technology</li>
-                            <li>🌙 Muhammad is my idol</li>
-                        </ul>
-                    </div>
-                </div>
 
-            <script>
+<section class="random-facts" id="random-facts">
+    <div class="facts-bg facts-bg-1"></div>
+    <div class="facts-bg facts-bg-2"></div>
+    <div class="facts-bg facts-bg-3"></div>
+
+    <div class="random-facts-content">
+        <p class="facts-kicker">Lifestyle Snapshot</p>
+        <h2>Random Facts</h2>
+        <p class="facts-intro">
+            Small details that reflect my personality, habits, mindset, and the lifestyle behind my work.
+        </p>
+
+        <ul>
+            <li>☕ I drink a lot of tea and coffee</li>
+            <li>🦥 Sleep like a sloth</li>
+            <li>🌿 Love to enjoy nature alone</li>
+            <li>🍳 I love to cook and eat</li>
+            <li>🚀 Always thinking about future goals and success</li>
+            <li>💸 Dream of a billionaire lifestyle</li>
+            <li>⚡ Get addicted to things fast</li>
+            <li>🎧 I enjoy music while working</li>
+            <li>🧼 I'm a bit of a clean freak</li>
+            <li>🤖 Interested in robotics and technology</li>
+            <li>🌙 Muhammad is my idol</li>
+        </ul>
+    </div>
+
+    <div class="random-facts-visual">
+        <div class="random-facts-image-wrap">
+            <img src="ChatGPT Image May 4, 2026, 05_22_58 PM.png" alt="Arif on screen">
+            <div class="random-facts-glow"></div>
+        </div>
+    </div>
+</section>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     const randomFacts = document.querySelector(".random-facts");
+    const factItems = document.querySelectorAll(".random-facts-content ul li");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -176,8 +358,33 @@ document.addEventListener("DOMContentLoaded", function () {
     if (randomFacts) {
         observer.observe(randomFacts);
     }
+
+    factItems.forEach((item) => {
+        item.addEventListener("mousemove", (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const moveX = (x - centerX) / 10;
+            const moveY = (y - centerY) / 10;
+
+            item.style.setProperty("--mx", `${x}px`);
+            item.style.setProperty("--my", `${y}px`);
+            item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+
+        item.addEventListener("mouseleave", () => {
+            item.style.transform = "translate(0, 0)";
+            item.style.setProperty("--mx", "50%");
+            item.style.setProperty("--my", "50%");
+        });
+    });
 });
 </script>
+
 
            <!-- Education Section -->
 <section id="education">
@@ -346,7 +553,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- Achievements Section -->
 <section id="achievements-section">
     <div class="achievements-header">
         <h2>Achievements</h2>
@@ -366,6 +572,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="achievement-card">
             <div class="achievement-image">
+                <img src="Co-curricular certificates .png" alt="Academic excellence recognition">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">ICT Project</span>
+                <p>Built and presented a responsive personal portfolio website using HTML and CSS.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
                 <img src="Shikho certificate .png" alt="Shikho certificate">
             </div>
             <div class="achievement-content">
@@ -376,10 +592,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="achievement-card">
             <div class="achievement-image">
+                <img src="Astronomy and innovation certigicate.png" alt="Astro Carnival Certificate">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Astronomy Award</span>
+                <p>2nd Runner Up at 2nd National Astro Carnival 2022.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
                 <img src="IMG_2822.JPG" alt="GPA achievement">
             </div>
             <div class="achievement-content">
-                <span class="achievement-tag">Top Result</span>
+                <span class="achievement-tag">Academic Excellence</span>
                 <p>Achieved a remarkable GPA at Bhashantek School and College.</p>
             </div>
         </div>
@@ -391,6 +617,16 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="achievement-content">
                 <span class="achievement-tag">Community Work</span>
                 <p>Volunteered as an academic tutor to support children in learning.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="science_innovation_certificate.png" alt="Science and Innovation Certificate">
+            </div>
+            <div class="achievement-content">
+                <span class="achievement-tag">Science & Innovation</span>
+                <p>Active Participant in Science and Innovation, DCSC 2023.</p>
             </div>
         </div>
 
@@ -435,6 +671,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+
 <!-- Projects Section -->
 <section id="projects">
     <div class="projects-header">
@@ -468,20 +705,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="project-card">
             <div class="project-top">
-                <span class="project-badge">Game Project</span>
+                <span class="project-badge">Running Burger Game</span>
             </div>
 
-            <h3>Running Burger Game</h3>
+            <h3>Browser Based Game</h3>
 
             <p>
-                I developed an interactive browser-based game inspired by my experience as a small business owner of a burger shop. This project reflects my creativity, where I combined fun gameplay with a real-life concept. The game allows users to catch falling burgers and score points, making it both entertaining and engaging while representing my entrepreneurial journey.
+                I developed an interactive burger-catching browser game using HTML, CSS, and JavaScript. The project focused on gameplay mechanics, score tracking, and user interaction while improving my frontend development and problem-solving skills.
             </p>
 
             <ul>
-                <li>Designed a fun and interactive gameplay experience</li>
-                <li>Inspired by my real-life burger business journey</li>
+                <li>Designed interactive gameplay mechanics</li>
+                <li>Implemented score tracking system</li>
                 <li>Built using HTML, CSS, and JavaScript</li>
-                <li>Implemented score tracking and challenge-based mechanics</li>
+                <li>Improved logical thinking and creativity through development</li>
                 <li>Focused on user engagement and simple controls</li>
             </ul>
 
@@ -492,22 +729,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="project-card">
             <div class="project-top">
-                <span class="project-badge">Business Project</span>
+                <span class="project-badge">Business Experience</span>
             </div>
 
-            <h3>Founder - Burger Express DWP</h3>
+            <h3>Assistant Manager – Burger Express DWP.</h3>
 
             <p>
-                I independently founded and managed Burger Express DWP, where I developed strong <strong>entrepreneurship skills</strong> through real-world business operations, customer service, budgeting, branding, and decision-making.
+                I worked at Burger Express DWP. as an <strong>Assistant Manager</strong>, where I gained hands-on experience in restaurant operations, customer service, food preparation, and team coordination. This experience helped me develop leadership, communication, problem-solving, and business management skills in a real working environment.
             </p>
 
             <ul>
-                <li>Built hands-on entrepreneurship experience by starting and running my own food business</li>
-                <li>Managed daily operations, food preparation, and service quality</li>
-                <li>Handled customers and improved satisfaction through direct communication</li>
-                <li>Processed online orders through Foodpanda and managed delivery coordination</li>
-                <li>Worked on pricing, budgeting, income tracking, and business planning</li>
-                <li>Strengthened leadership, responsibility, and decision-making in a real business environment</li>
+                <li>Assisted with daily restaurant operations and workflow</li>
+                <li>Coordinated staff activities and customer service</li>
+                <li>Managed food preparation and hygiene standards</li>
+                <li>Helped process online orders and delivery coordination</li>
+                <li>Improved teamwork, communication, and decision-making skills</li>
             </ul>
 
             <div class="project-links">
